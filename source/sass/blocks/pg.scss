@@ -1,0 +1,118 @@
+.pg__wrap {
+  @media (min-width: $large) {
+    position: relative;
+    z-index: 1;
+    background-image: linear-gradient(to right, transparent 0%, transparent calc(50% + #{$l-field}), $green-1 calc(50% + #{$l-field}), $green-1 100%);
+    background-position: center top;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 50%;
+    height: 100%;
+    background-image: url("../img/index-background-desktop@1x.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.pg__header {
+  @media (min-width: $medium) {
+    padding-top: 22px;
+    padding-bottom: 22px;
+  }
+
+  @media (min-width: $large) {
+    padding-top: 52px;
+    padding-bottom: 20px;
+  }
+
+}
+
+.pg__nav {
+  margin: 0 -#{$s-field};
+
+  @media (min-width: $medium) {
+    margin: 0;
+  }
+}
+
+.pg__title {
+  @include font(36px, 60px);
+  margin: 0 0 25px;
+  padding-top: 15px;
+  color: $b-grey-3;
+
+  @media (min-width: $medium) {
+    padding-top: 30px;
+    font-size: 60px;
+  }
+
+  @media (min-width: $large) {
+    padding-top: 50px;
+    margin-bottom: 25px;
+  }
+}
+
+.pg__sub-title {
+  @include font(24px, 1);
+  position: relative;
+  display: flex;
+  margin: 0;
+  margin-right: -$s-field;
+  color: $b-grey-3;
+
+  &::before,
+  &::after {
+    display: block;
+    min-width: $m-field;
+    margin-top: 15px;
+    height: 3px;
+    background-color: $green-1;
+  }
+
+  &::after {
+    content: "";
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+
+  @media (min-width: $medium) {
+    margin-right: -$m-field;
+    margin-left: -$m-field;
+    font-size: 36px;
+
+    &::before,
+    &::after {
+      margin-top: 20px;
+    }
+
+    &::before {
+      content: "";
+      width: $m-field;
+      margin-right: $l-field;
+    }
+
+    &::after {
+      margin-left: $l-field;
+    }
+  }
+
+  @media (min-width: $large) {
+    min-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+
+
+    &::after {
+      margin-left: $l-field;
+    }
+  }
+}

@@ -1,0 +1,147 @@
+.catalog {
+  position: relative;
+  padding-top: 5px;
+
+  &::before,
+  &::after {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    border-top: 1px solid $grey-1;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  @media (min-width: $medium) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  @media (min-width: $large) {
+    padding-top: 0;
+  }
+}
+
+.catalog__item {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100vw;
+    border-top: 1px solid $grey-1;
+    margin-left: -50vw;
+  }
+
+  @media (min-width: $medium) {
+    flex-shrink: 0;
+    margin-bottom: 3px;
+    border: none;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @media (min-width: $large) {
+    margin-right: 80px;
+    margin-bottom: 4px;
+
+    &:nth-of-type(4n+4) {
+      margin-right: 0;
+    }
+  }
+}
+
+.catalog__more {
+  margin: 0;
+  padding: 25px 0;
+  font-size: 16px;
+  text-align: center;
+
+  &::before {
+    content: "";
+    display: block;
+    margin: 0 auto 22px;
+    width: 30px;
+    height: 30px;
+    background-image:
+            linear-gradient(to right, transparent 0%, transparent 14px, $grey-1 14px, $grey-1 16px, transparent 16px, transparent 100%),
+            linear-gradient(to bottom, transparent 0%, transparent 14px, $grey-1 14px, $grey-1 16px, transparent 16px, transparent 100%);
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width: $medium) {
+    align-self: flex-end;
+    width: 45.7%;
+    padding: 55px 37px 40px;
+    border: 1px solid $grey-1;
+
+    &::before {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 48px;
+      background-image:
+              linear-gradient(to right, transparent 0%, transparent 29px, $grey-1 29px, $grey-1 31px, transparent 31px, transparent 100%),
+              linear-gradient(to bottom, transparent 0%, transparent 29px, $grey-1 29px, $grey-1 31px, transparent 31px, transparent 100%);
+    }
+  }
+
+  @media (min-width: $large) {
+    max-width: calc(25% - 60px);
+  }
+}
+
+.catalog__note {
+  @include font(16px, 20px);
+  display: block;
+  margin: 0 auto 8px;
+  text-transform: uppercase;
+  color: $b-grey-3;
+
+  @media (min-width: $medium) {
+    font-size: 20px;
+    width: 70%;
+    margin-bottom: 26px;
+  }
+
+  @media (min-width: $large) {
+    width: 100%;
+  }
+}
+
+.catalog__more span {
+  @include font(12px, 16px);
+  display: block;
+  margin: 0 auto 22px;
+  font-family: "Arial", sans-serif;
+
+  @media (min-width: $medium) {
+    @include font(16px, 20px);
+    width: 70%;
+    margin-bottom: 82px;
+  }
+
+  @media (min-width: $large) {
+    width: 100%;
+    margin-bottom: 85px;
+  }
+}

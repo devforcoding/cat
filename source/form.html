@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Функциональное питание для котов</title>
+    <link href="css/style.min.css" rel="stylesheet">
+    <link href="fonts/oswaldmedium.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
+    <link href="fonts/oswaldregular.woff2" rel="preload" as="font" type="font/woff2" crossorigin>
+</head>
+<body class="pg">
+<div style="display:none">
+    <include src="build/img/s-sprite.svg"></include>
+</div>
+<header class="pg__header container">
+    <nav class="nav pg__nav">
+        <a class="logo" href="index.html">
+            <include src="build/img/logo-image.svg"></include>
+            <svg class="logo-title">
+                <use xlink:href="#s-logo-title"></use>
+            </svg>
+        </a>
+        <button class="nav__toggle" type="button"></button>
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a class="nav__link" href="index.html">Главная</a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link" href="catalog.html">Каталог продукции</a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link nav__link--current">Подбор программы</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="pg__main container">
+    <h1 class="pg__title">Подбор программы</h1>
+    <form class="form" action="https://echo.htmlacademy.ru" method="post">
+        <p class="form__info">Заполните анкету и мы подберем <br>программу питания для вашего кота</p>
+        <div class="form__wrapp">
+            <div class="form__fieldset form__fieldset--parameters">
+                <label class="field form__field">
+                    Имя:*
+                    <input class="field__input" type="text" name="name" placeholder="Барсик">
+                </label>
+                <label class="field form__field">
+                    Вес (кг):*
+                    <input class="field__input" type="text" name="weight" placeholder="7">
+                </label>
+                <label class="field form__field">
+                    Возраст (лет):
+                    <input class="field__input" type="text" name="age" placeholder="7">
+                </label>
+            </div>
+
+            <div class="form__fieldset form__fieldset--frame">
+                <label class="field form__field">
+                    <input class="visually-hidden" type="radio" name="program" value="slim" checked>
+                    <span class="radio">Похудение</span>
+                </label>
+                <label class="field form__field">
+                    <input class="visually-hidden" type="radio" name="program" value="pro">
+                    <span class="radio">Набор массы</span>
+                </label>
+                <label class="field form__field">
+                    <input class="visually-hidden" type="radio" name="program" value="advice">
+                    <span class="radio">Не знаю (нужен ваш совет)</span>
+                </label>
+            </div>
+        </div>
+        <h3 class="pg__sub-title form__legend">Контактные данные<br>&#032;(владельца кота)</h3>
+        <div class="form__fieldset form__fieldset--two-columns">
+            <label class="field form__field">
+                E-mail:*
+                <input class="field__input field__input--icon" type="email" name="age" placeholder="kuklachev@gmail.com" required>
+                <svg class="field__icon field__icon--mail" width="17" height="13">
+                    <use xlink:href="#s-icon-mail"></use>
+                </svg>
+            </label>
+            <label class="field form__field">
+                Телефон:*
+                <input class="field__input field__input--icon" type="tel" name="age" placeholder="8 (960) 900-60-90" required>
+                <svg class="field__icon field__icon--phone" width="20" height="20">
+                    <use xlink:href="#s-icon-phone"></use>
+                </svg>
+            </label>
+        </div>
+
+        <h3 class="pg__sub-title form__legend">Комментарий</h3>
+
+        <div class="form__fieldset">
+            <label class="field form__field">
+                <span class="visually-hidden">Расскажите обо всех повадках кота</span>
+                <textarea class="field__textarea" placeholder="Расскажите обо всех повадках кота"></textarea>
+            </label>
+        </div>
+        <h3 class="pg__sub-title form__legend">Дополнительно</h3>
+        <div class="form__fieldset form__fieldset--four-columns">
+            <label class="field form__field">
+                <input class="visually-hidden" type="checkbox" name="sweetener" checked>
+                <span class="checkbox">Сахарозаменитель</span>
+            </label>
+            <label class="field form__field">
+                <input class="visually-hidden" type="checkbox" name="water">
+                <span class="checkbox">Питьевая вода</span>
+            </label>
+            <label class="field form__field">
+                <input class="visually-hidden" type="checkbox" name="milk">
+                <span class="checkbox">Молоко</span>
+            </label>
+            <label class="field form__field">
+                <input class="visually-hidden" type="checkbox" name="vitamins">
+                <span class="checkbox">Витамины</span>
+            </label>
+        </div>
+        <div class="form__footer">
+            <button class="button form__submit" type="submit">Отправить заявку</button>
+            <small class="form__note">* — Обязательные поля</small>
+        </div>
+    </form>
+</main>
+<footer class="footer">
+    <section class="contacts">
+        <p class="contacts__partners container">
+          <span class="contacts__card">
+            <b class="contacts__invite">Приглашаем <br>к сотрудничеству дилеров!</b>
+            <span class="contacts__address">ул. Большая Конюшенная, д. 19/8 <br>Санкт-Петербург</span>
+          </span>
+        </p>
+        <p class="contacts__map">
+            <picture>
+                <source type="image/webp" media="(min-width: 1300px)" srcset="img/bg-map-desktop@1x.webp 1x, img/bg-map-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/bg-map-tablet@1x.webp 1x, img/bg-map-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/bg-map-mobile@1x.webp 1x, img/bg-map-mobile@2x.webp 2x">
+
+                <source media="(min-width: 1300px)" srcset="img/bg-map-desktop@1x.png 1x, img/bg-map-desktop@2x.png 2x">
+                <source media="(min-width: 768px)" srcset="img/bg-map-tablet@1x.png 1x, img/bg-map-tablet@2x.png 2x">
+
+                <img class="contacts__static-map" src="img/bg-map-mobile@1x.png" srcset="img/bg-map-mobile@2x.png 2x">
+            </picture>
+            <span class="contacts__api-map" id="api-map"></span>
+        </p>
+    </section>
+    <div class="footer__bottom container">
+        <a class="footer__name" href="index.html">
+            <img src="img/logo-footer.svg" alt="Cat">
+        </a>
+        <ul class="social footer__social">
+            <li class="social__network">
+                <a class="social__link social__link--vk" href="#">
+                    <svg class="social__icon social__icon--small">
+                        <use xlink:href="#s-icon-vk-mobile"></use>
+                    </svg>
+                    <svg class="social__icon social__icon--big">
+                        <use xlink:href="#s-icon-vk"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="social__network">
+                <a class="social__link social__link--ins" href="#">
+                    <svg class="social__icon social__icon--small">
+                        <use xlink:href="#s-icon-ins-mobile"></use>
+                    </svg>
+                    <svg class="social__icon social__icon--big">
+                        <use xlink:href="#s-icon-ins"></use>
+                    </svg>
+                </a>
+            </li>
+            <li class="social__network">
+                <a class="social__link social__link--fb" href="#">
+                    <svg class="social__icon social__icon--small">
+                        <use xlink:href="#s-icon-fb-mobile"></use>
+                    </svg>
+                    <svg class="social__icon social__icon--big">
+                        <use xlink:href="#s-icon-fb"></use>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <a class="footer__copyright" href="">
+            <span class="footer__author">Beetroot Academy</span>
+        </a>
+    </div>
+</footer>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkfpZvE3kw5eY7px6Srl9Qb6tN9vZmGIA"></script>
+<script src="js/script.min.js"></script>
+</body>
+</html>

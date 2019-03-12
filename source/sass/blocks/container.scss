@@ -1,0 +1,17 @@
+.container {
+  display: block;
+  max-width: $large;
+  margin: 0 auto;
+  padding-right: $s-field;
+  padding-left: $s-field;
+
+  @media (min-width: $medium) {
+    padding-right: $m-field;
+    padding-left: $m-field;
+  }
+
+  @media (min-width: $large) {
+    padding-right: $l-field;
+    padding-left: $l-field;
+  }
+}

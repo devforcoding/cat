@@ -1,0 +1,230 @@
+.slider {
+  @media (min-width: $medium) {
+    padding-bottom: 55px;
+    background-image: linear-gradient(to right, $grey-1 0%, $grey-1 50%, $grey-2 50%, $grey-2 100%);
+    background-position: center bottom;
+    background-size: 100% calc(100% - 170px);
+    background-repeat: no-repeat;
+  }
+
+  @media (min-width: $large) {
+    flex-shrink: 0;
+    background-image: linear-gradient(to right, $grey-1 0%, $grey-1 calc(50% + 20px), $grey-2 calc(50% + 20px), $grey-2 100%);
+    background-size: 100% calc(100% - 190px);
+  }
+}
+
+.slider__input {
+  display: none;
+}
+
+.slider__content {
+  position: relative;
+  width: 320px;
+  min-height: 248px;
+  margin: 0 auto 25px;
+
+  @media (min-width: $medium) {
+    width: 690px;
+    min-height: 517px;
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $large) {
+    margin-bottom: 40px;
+  }
+}
+
+.slider__filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  @media (min-width: $medium) {
+    left: auto;
+    overflow: hidden;
+
+    &--before {
+      left: 0;
+      width: 345px;
+    }
+
+    &--after {
+      right: 0;
+      width: 345px;
+    }
+  }
+
+  @media (min-width: $large) {
+    &--before {
+      width: 365px;
+    }
+
+    &--after {
+      width: 325px;
+    }
+  }
+}
+
+.slider__image {
+  width: 320px;
+  height: auto;
+  opacity: 0;
+
+  @media (min-width: $medium) {
+    position: absolute;
+    top: 0;
+    width: 690px;
+    max-width: 690px;
+    opacity: 1;
+
+    &--before {
+      left: 5px;
+    }
+
+    &--after {
+      right: -5px;
+    }
+  }
+
+  @media (min-width: $large) {
+    &--before {
+      left: 0;
+    }
+
+    &--after {
+      right: 0;
+    }
+  }
+}
+
+.slider__control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-bottom: 15px;
+
+  @media (min-width: $large) {
+    padding-left: 40px;
+  }
+}
+
+.slider__text {
+  @include font(16px, 20px);
+  min-width: 45px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $b-grey-3;
+
+  @media (min-width: $medium) {
+    padding-bottom: 5px;
+    font-size: 20px;
+    border-bottom: 1px dotted $b-grey-1;
+
+    &:hover {
+      border-bottom: 1px solid $b-grey-1;
+    }
+
+    &:active {
+      padding-bottom: 6px;
+      border: none;
+    }
+  }
+}
+
+.slider__range {
+  position: relative;
+  display: inline-flex;
+  width: 84px;
+  height: 14px;
+  margin: 0 15px;
+  padding: 3px 5px;
+  background-color: #ffffff;
+  border: 1px solid $grey-3;
+  border-radius: 7px;
+
+  @media (min-width: $medium) {
+    width: 428px;
+    height: 6px;
+    margin: 0 22px;
+    background-color: $grey-3;
+    border: none;
+    border-radius: none;
+  }
+}
+
+.slider__toggle {
+  width: 50%;
+  height: 6px;
+  background-color: $green-1;
+  border-radius: 3px;
+  opacity: 0;
+  outline: none;
+  cursor: pointer;
+
+  @media (min-width: $medium) {
+    position: absolute;
+    top: -14px;
+    width: 34px;
+    height: 34px;
+    padding: 11px;
+    background-color: #ffffff;
+    border: 2px solid $grey-3;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+
+    &::before {
+      content: "";
+      display: block;
+      width: 8px;
+      height: 8px;
+      background-color: $green-1;
+      border-radius: 50%;
+    }
+
+    &:focus,
+    &:hover {
+      box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    &:active {
+      border-color: $green-1;
+      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    &--before {
+      left: 0;
+    }
+
+    &--after {
+      right: 0;
+    }
+
+    &:first-of-type {
+      left: calc(50% - 15px);
+    }
+
+    &:not(:first-of-type) {
+      display: none;
+    }
+  }
+}
+
+.slider__input--before:checked ~ .slider__control .slider__toggle--before {
+  opacity: 1;
+}
+
+.slider__input--before:checked ~ .slider__content .slider__image--before {
+  opacity: 1;
+}
+
+.slider__input--after:checked ~ .slider__control .slider__toggle--after {
+  opacity: 1;
+}
+
+.slider__input--after:checked ~ .slider__content .slider__image--after {
+  opacity: 1;
+}

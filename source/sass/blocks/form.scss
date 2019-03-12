@@ -1,0 +1,236 @@
+.form {
+  @include font(16px, 18px);
+
+  @media (min-width: $medium) {
+    @include font(20px, 20px);
+    padding-top: 25px;
+    padding-bottom: 28px;
+  }
+
+  @media (min-width: $large) {
+    padding-top: 30px;
+  }
+}
+
+.form__wrapp {
+  @media (min-width: $large) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+}
+
+.form__wrapp .form__fieldset {
+  @media (min-width: $large) {
+    width: calc(50% - #{$l-field});
+    margin-bottom: 5px;
+  }
+}
+
+.form__info {
+  @include font(14px, 18px);
+  margin: 0;
+  margin-bottom: 17px;
+  text-transform: uppercase;
+  color: $b-grey-3;
+
+  @media (min-width: $medium) {
+    @include font(20px, 30px);
+    margin-bottom: 35px;
+    padding: 5px $l-field 0;
+  }
+
+  @media (min-width: $large) {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 65px;
+  }
+}
+
+.form__fieldset {
+  margin: 0 0 5px;
+  padding: 20px 0;
+  border: none;
+
+  &--frame {
+    margin: 0 -#{$s-field} 25px;
+    padding-right: $s-field;
+    padding-left: $s-field;
+    border-top: 1px solid $grey-2;
+    border-bottom: 1px solid $grey-2;
+  }
+
+  @media (min-width: $medium) {
+    margin: 0;
+    padding: 30px $l-field;
+
+    &--frame {
+      margin: 45px -#{$m-field} 40px $l-field;
+      padding: 23px 70px 25px 0;
+      border: 1px solid $grey-2;
+      border-right: none;
+    }
+
+    &--four-columns {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+
+  @media (min-width: $large) {
+    width: 100%;
+    padding: 30px 0;
+
+    &--parameters {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &--frame {
+      width: calc(50% - #{$l-field});
+      margin: 0;
+      padding: 23px 70px 25px 0;
+      border: 1px solid $grey-2;
+    }
+
+    &--two-columns {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    &--four-columns {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+}
+
+.form__fieldset--frame .form__field {
+  margin-bottom: 13px;
+
+  @media (min-width: $medium) {
+    margin: 0 27px 13px;
+  }
+
+  @media (min-width: $large) {
+    margin: 0 27px 13px;
+  }
+}
+
+.form__fieldset--two-columns .form__field {
+  @media (min-width: $large) {
+    width: calc(50% - #{$l-field});
+    margin-bottom: 5px;
+  }
+}
+
+.form__fieldset--four-columns .form__field {
+  margin-bottom: 12px;
+
+  @media (min-width: $medium) {
+    width: calc(50% - #{$m-field});
+    margin-bottom: 33px;
+  }
+
+  @media (min-width: $large) {
+    width: calc(25% - 60px);
+    margin-bottom: 33px;
+  }
+}
+
+.form__legend {
+  margin-top: 10px;
+  margin-bottom: 15px;
+
+  @media (min-width: $medium) {
+    margin-top: 0;
+    margin-bottom: 45px;
+    padding-top: 35px;
+
+    & br {
+      display: none;
+    }
+  }
+}
+
+.form__legend br {
+  @media (min-width: $medium) {
+    display: none;
+  }
+}
+
+.form__field {
+  margin-bottom: 15px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $medium) {
+    margin-bottom: 20px;
+  }
+}
+
+.form__footer {
+  padding-top: 10px;
+  padding-bottom: 30px;
+
+  @media (min-width: $medium) {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 45px;
+  }
+
+  @media (min-width: $large) {
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 55px;
+  }
+}
+
+.form__submit {
+  margin-bottom: 20px;
+
+  @media (min-width: $medium) {
+    width: 40%;
+    margin: 0 30px 0 auto;
+    padding: 15.5px 0;
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  @media (min-width: $large) {
+    width: calc(50% - #{$l-field});
+    margin: 0;
+  }
+}
+
+.form__note {
+  @include font(14px, 16px);
+  display: block;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+
+  @media (min-width: $medium) {
+    width: 40%;
+    margin: 0 auto 0 30px;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  @media (min-width: $large) {
+    width: calc(50% - #{$l-field});
+    margin: 0;
+  }
+}
