@@ -6,7 +6,7 @@
   "description": "Функциональное питание для котов",
   "devDependencies": {
     "autoprefixer": "7.2.x",
-    "browser-sync": "2.23.x",
+    "browser-sync": "2.27.x",
     "del": "^3.0.0",
     "gh-pages": "^2.0.1",
     "gulp": "3.9.x",
